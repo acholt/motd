@@ -15,3 +15,6 @@ MethodLength:
 
 SingleSpaceBeforeFirstArg:
   Enabled: false
+
+FileName:
+  Enabled: false
