@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: motd
-# Recipe:: default
+# Recipe:: knife-status
 #
 # Copyright 2012, Chris Aumann
 #
