@@ -1,5 +1,37 @@
 require 'spec_helper'
 
 describe 'MOTD' do
-  # TODO: Add tests
+  describe file '/etc/update-motd.d/50-cow' do
+    it { should be_file }
+    it { should be_mode '755' }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
+    its(:content) do should match(
+      /This is (\e\[0;34;49m)?default-(ubuntu|centos)-(.*?)(\e\[0m)?, a vagrantup.com _default server/
+      )
+    end
+  end
+
+  describe file '/etc/update-motd.d/98-knife-status' do
+    it { should be_file }
+    it { should be_mode '755' }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
+    its(:content) { should include 'Last chef run:' }
+  end
+
+  describe file '/tmp/kitchen/cache/handlers' do
+    it { should be_directory }
+    it { should be_mode '755' }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
+  end
+
+  describe file '/tmp/kitchen/cache/handlers/knife_status.rb' do
+    it { should be_file }
+    it { should be_mode '644' }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
+    its(:content) { should include 'KnifeStatus < Chef::Handler' }
+  end
 end
