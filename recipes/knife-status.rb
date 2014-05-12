@@ -28,7 +28,7 @@ interval ||= 1800
 # We need to current interval in minutes
 interval = Integer(interval) / 60
 
-motd '98-knife-status' do
+et_motd '98-knife-status' do
   source    'knife-status.erb'
   variables interval: interval,
             timestamp_file: "#{Chef::Config[:file_cache_path]}/last_successful_chef_run"

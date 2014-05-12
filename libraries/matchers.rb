@@ -19,11 +19,11 @@
 #
 
 if defined?(ChefSpec)
-  def create_motd(name)
-    ChefSpec::Matchers::ResourceMatcher.new(:motd, :create, name)
+  def create_et_motd(name)
+    ChefSpec::Matchers::ResourceMatcher.new(:et_motd, :create, name)
   end
 
-  def delete_motd(name)
-    ChefSpec::Matchers::ResourceMatcher.new(:motd, :delete, name)
+  def delete_et_motd(name)
+    ChefSpec::Matchers::ResourceMatcher.new(:et_motd, :delete, name)
   end
 end

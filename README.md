@@ -49,7 +49,7 @@ node['motd']['color'] = true
 To use the provider in your cookbook, make sure you put the following line in your metadata.rb
 
 ```ruby
-depends 'motd'
+depends 'et_motd'
 ```
 
 ## default
@@ -60,13 +60,13 @@ If not, it has no meaning.
 Create motd using the shipped cow template
 
 ```ruby
-motd '50-mymotd'
+et_motd '50-mymotd'
 ```
 
 Create a motd using a custom template
 
 ```ruby
-motd '50-mymotd' do
+et_motd '50-mymotd' do
   cookbook 'my cookbook'
   source   'test.erb'
 end
@@ -75,7 +75,7 @@ end
 Use the default cow template, but do not use colors
 
 ```ruby
-motd '50-mymotd' do
+et_motd '50-mymotd' do
   color false
 end
 ```
@@ -83,7 +83,7 @@ end
 Remove a motd (if update-motd is used only)
 
 ```ruby
-motd '50-mymotd' do
+et_motd '50-mymotd' do
   action :delete
 end
 ```

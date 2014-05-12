@@ -14,4 +14,4 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[motd::default]
+      - recipe[et_motd::default]

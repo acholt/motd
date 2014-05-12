@@ -18,5 +18,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-include_recipe 'motd::cow'
-include_recipe 'motd::knife-status'
+include_recipe 'et_motd::cow'
+include_recipe 'et_motd::knife-status'
